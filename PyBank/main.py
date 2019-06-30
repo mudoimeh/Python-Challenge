@@ -80,27 +80,30 @@ print(min_increase,profit_date[index_min+1], profit_change[index_min])
 #Write the Analysis Data
 # Specify the file to write to
 output_path = os.path.join("Output", "Pybank_Analysis.csv")
+output_file = "Bank_"
 
-with open(output_path, 'w', newline='') as csvfile:
+write_pybank_analysis = f"{output_file}pypoll_results.txt"
+#with open(output_path, 'w', newline='') as csvfile:
 
      # Initialize csv.writer
     #csvwriter = csv.writer(csvfile, delimiter=',')
-    filewriter = csv.writer(csvfile) #, delimiter=',')
+    #filewriter = csv.writer(csvfile) #, delimiter=',')
 
     # Write the first row (column headers)
     #profit_date[index_min+1]
        # Open write file
 
     #filewriter = open(Pybank_Analysis.csv, mode = 'w')
-    
+        # Open write file
+filewriter = open(write_pybank_analysis, mode = 'w')
     # Print to write file
-    filewriter.writerow(f"Financial Analysis:\n")
-    filewriter.writerow("-------------------------------------------------------\n")
-    filewriter.writerow(f"Total Months: {month_counter}\n")
-    filewriter.writerow(f"Total: {profit_loss_total} USD\n")
-    filewriter.writerow(f"Average Change: {average_change} USD\n")
-    filewriter.writerow(f"Greatest Increase in Revenue: {profit_date[index_max+1]} {profit_change[index_max]} USD\n")
-    filewriter.writerow(f"Greatest Decrease in Revenue: {profit_date[index_min+1]} {profit_change[index_min]} USD\n")
-    filewriter.writerow("")
+filewriter.write("Financial Analysis:\n")
+filewriter.write("-------------------------------------------------------\n")
+filewriter.write(f"Total Months: {month_counter}\n")
+filewriter.write(f"Total: {profit_loss_total} USD\n")
+filewriter.write(f"Average Change: {average_change} USD\n")
+filewriter.write(f"Greatest Increase in Revenue: {profit_date[index_max+1]} {profit_change[index_max]} USD\n")
+filewriter.write(f"Greatest Decrease in Revenue: {profit_date[index_min+1]} {profit_change[index_min]} USD\n")
+filewriter.write("")
 
     #filewriter.close()
