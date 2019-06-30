@@ -82,7 +82,7 @@ print(min_increase,profit_date[index_min+1], profit_change[index_min])
 output_path = os.path.join("Output", "Pybank_Analysis.csv")
 output_file = "Bank_"
 
-write_pybank_analysis = f"{output_file}pypoll_results.txt"
+write_pybank_analysis = f"{output_file}pybank_results.txt"
 #with open(output_path, 'w', newline='') as csvfile:
 
      # Initialize csv.writer
